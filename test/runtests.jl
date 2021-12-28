@@ -1,13 +1,18 @@
 using SimpleDelimitedFiles
 using Test
 using DelimitedFiles
+using Aqua
+
+@testset "project quality" begin
+    Aqua.test_all(SimpleDelimitedFiles)
+end
 
 @testset "Comparison with DelimitedFiles" begin
     mktemp() do fname, f
         A = rand(2, 2)
         writedlm(fname, A)
         @test readdlm(fname) == SimpleDelimitedFiles.readdlm(fname)
-        A = rand(2, 2)*2 .- 1
+        A = rand(2, 2) * 2 .- 1
         writedlm(fname, A)
         @test readdlm(fname) == SimpleDelimitedFiles.readdlm(fname)
         for T in [Float64, Int]
