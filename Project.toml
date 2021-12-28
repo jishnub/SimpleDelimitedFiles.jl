@@ -1,0 +1,13 @@
+name = "SimpleDelimitedFiles"
+uuid = "44ac6da9-39e0-40c2-8ac2-dc1cb273e973"
+authors = ["jishnub <jishnub@users.noreply.github.com> and contributors"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1"
+
+[targets]
+test = ["Test"]
