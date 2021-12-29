@@ -1,5 +1,7 @@
 # SimpleDelimitedFiles
 
+[![Unit test](https://github.com/jishnub/SimpleDelimitedFiles.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/jishnub/SimpleDelimitedFiles.jl/actions/workflows/CI.yml)
+
 This is a very basic package meant to read in numerical matrices from files.
 This package defines its own `readdlm` function that is not exported.
 For more advanced usage consider using the stdlib `DelimitedFiles`.
