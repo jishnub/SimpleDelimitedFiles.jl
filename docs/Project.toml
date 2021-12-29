@@ -1,3 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 SimpleDelimitedFiles = "44ac6da9-39e0-40c2-8ac2-dc1cb273e973"
+
+[compat]
+Documenter = "0.27"
