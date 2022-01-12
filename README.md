@@ -38,7 +38,7 @@ julia> @time readdlm(f);
   0.084439 seconds (597.56 k allocations: 15.646 MiB)
 
 julia> @time SimpleDelimitedFiles.readdlm(f);
-  0.004552 seconds (1.23 k allocations: 852.065 KiB)
+  0.005872 seconds (1.33 k allocations: 1.076 MiB)
 ```
 
 The function defined in this package uses less memory, and is often more performant. However this function does not support most functionality from `DelimitedFiles` at present, eg. headers. It's useful if you want to quickly read in files where the data is known to be a numerical matrix, and whose element type is either known, or may be parsed as `Float64`.

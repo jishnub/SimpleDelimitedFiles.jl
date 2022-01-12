@@ -45,7 +45,7 @@ function readdlm(fname, delim::Char = '\t', T::Type = Float64)
     ncols = count(==(delim), lines[1]) + 1
     M = Matrix{T}(undef, nrows, ncols)
     for (rowind, l) in enumerate(lines)
-        tokens = split(l, delim)
+        tokens = strip.(split(l, delim))
         M[rowind, :] .= parse.(T, tokens)
     end
     return M
