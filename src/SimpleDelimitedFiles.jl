@@ -42,10 +42,11 @@ function readdlm(fname, delim::Char = '\t', T::Type = Float64)
         readlines(f)
     end
     nrows = length(lines)
-    ncols = count(==(delim), lines[1]) + 1
+    r = Regex("[$delim]+")
+    ncols = count(r, strip(lines[1])) + 1
     M = Matrix{T}(undef, nrows, ncols)
     for (rowind, l) in enumerate(lines)
-        tokens = strip.(split(l, delim))
+        tokens = strip.(split(l, delim, keepempty = false))
         M[rowind, :] .= parse.(T, tokens)
     end
     return M

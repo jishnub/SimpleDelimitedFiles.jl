@@ -22,6 +22,19 @@ end
                 write(f, s)
             end
             @test readdlm(fname) == SimpleDelimitedFiles.readdlm(fname)
+            # leading space
+            s = join(["  " * (@sprintf "%10.2f" i) for i in 1:4], '\n') * "\n"
+            open(fname, "w") do f
+                write(f, s)
+            end
+            @test readdlm(fname) == SimpleDelimitedFiles.readdlm(fname)
+            s = join([(s = @sprintf "%10.2f" i; "  $s $s") for i in 1:4], '\n') * "\n"
+            open(fname, "w") do f
+                write(f, s)
+            end
+            M = readdlm(fname, ' ')
+            M = M[:, (x->all(y -> y isa Number, x)).(eachcol(M))]
+            @test M  == SimpleDelimitedFiles.readdlm(fname, ' ')
         end
         for T in [Float64, Int]
             A = rand(T, 2, 2)
