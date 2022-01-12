@@ -6,8 +6,10 @@ module SimpleDelimitedFiles
 Read a delimited numerical matrix from the file named `source`. The elements
 of the matrix should be of type `T`. The end of line delimiter is taken as `\n`.
 
-For simple usecases, this is a more performant equivalent of `readdlm`
-from `DelimitedFiles`.
+For simple use cases, this is a more performant equivalent of `readdlm`
+from `DelimitedFiles`. There are subtle differences though, for example this package
+tries to aggressively remove multiple delimiters between entries, wheread `DelimitedFiles`
+does not do this.
 
 # Examples
 ```jldoctest
