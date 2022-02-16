@@ -8,7 +8,7 @@ of the matrix should be of type `T`. The end of line delimiter is taken as `\n`.
 
 For simple use cases, this is a more performant equivalent of `readdlm`
 from `DelimitedFiles`. There are subtle differences though, for example this package
-tries to aggressively remove multiple delimiters between entries, wheread `DelimitedFiles`
+tries to aggressively remove multiple delimiters between entries, whereas `DelimitedFiles`
 does not do this.
 
 # Examples
