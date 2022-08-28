@@ -18,6 +18,8 @@ julia> A = rand(2,2)
  0.0630187  0.351596
  0.257851   0.601259
 
+julia> f = tempname();
+
 julia> writedlm(f, A) # from DelimitedFiles
 
 julia> SimpleDelimitedFiles.readdlm(f)
